@@ -53,14 +53,17 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange AddHeaders="True" DataTable="[transactionQueueRaw]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="C:\Users\Zombie\Desktop\UIPath\REFramework\New Stuart UIPath Stuff\UIPath Demo 1\Transactions.xlsx">
+    <ui:ReadRange AddHeaders="True" DataTable="[transactionQueueRaw]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" Password="{x:Null}" SheetName="Sheet1" Workbook="{x:Null}" WorkbookPath="C:\Users\Zombie\Desktop\UIPath\REFramework\New Stuart UIPath Stuff\UIPath Demo 1\Transactions.xlsx">
       <ui:ReadRange.Range>
         <InArgument x:TypeArguments="x:String">
-          <Literal x:TypeArguments="x:String" Value="" />
+          <Literal x:TypeArguments="x:String">
+            <Literal.Result>
+              <OutArgument x:TypeArguments="x:String" />
+            </Literal.Result></Literal>
         </InArgument>
       </ui:ReadRange.Range>
     </ui:ReadRange>
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[transactionQueueRaw]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="333.6,264" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[transactionQueueRaw]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="333.6,264" sap2010:WorkflowViewState.IdRef="ForEachRow_1" Values="{x:Null}">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -75,7 +78,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[Demoqueue]">
+            <ui:AddQueueItem ContinueOnError="{x:Null}" DeferDate="{x:Null}" DisplayName="Add Queue Item" DueDate="{x:Null}" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" ItemInformationCollection="{x:Null}" Priority="Normal" QueueType="[Demoqueue]" Reference="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}">
               <ui:AddQueueItem.ItemInformation>
                 <InArgument x:TypeArguments="x:String" x:Key="CashIn">[row("CashIn").ToString]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="OnUsCheck">[row("OnUsCheck").ToString]</InArgument>
